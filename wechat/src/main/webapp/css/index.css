@@ -1,0 +1,36 @@
+#logo {
+    font: x-large/1.75 "Essays 1743", "Marker Felt", "Kristen ITC", "Viner Hand ITC", "Lucida Handwriting", Amienne, Boopee, "Segoe Print", "Times New Roman", serif;
+    text-shadow: 0 0 1px #667;
+    font-size: 24px;
+    width: 100px;
+    line-height: 2.5;
+    color: rgb(81, 96, 183);
+}
+
+#login {
+    color: rgb(81, 96, 183);
+}
+
+.loginBox {
+    width: 420px;
+    height: 350px;
+    padding: 0 20px;
+    border: 1px solid #fff;
+    color: #000;
+    margin-top: 40px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0 15px #222;
+    background: -moz-linear-gradient(top, #fff, #efefef 8%);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#f4f4f4));
+    font: 11px/1.5em 'Microsoft YaHei';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -210px;
+    margin-top: -115px;
+}
+
+.loginBox p > input {
+    width: 100%;
+}

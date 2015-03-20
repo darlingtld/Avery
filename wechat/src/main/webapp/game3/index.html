@@ -1,0 +1,107 @@
+<!DOCTYPE>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>灵达抽大奖</title>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/Rotate.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <style>
+        body{
+            background-color: rgb(213, 21, 48);
+        }
+
+        .lotteryBg {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            background: url(images/lotteryBg.png) center center fixed no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #run {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -57px;
+            margin-top: -81px;
+            z-index: 1;
+            transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+        }
+
+        #btn_run {
+            width: 100%;
+            height: 100%;
+            background: url(images/btn_start.png) center center fixed no-repeat;
+            border: none;
+            outline: none;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-left: -62px;
+            margin-top: -62px;
+            z-index: 2;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<section class="lotteryMain">
+    <div class="lotteryBg">
+        <img id="run" src="images/start.png"/>
+        <input id="btn_run" type="button" value=""/>
+    </div>
+</section>
+<script>
+    $(function () {
+        $("#btn_run").click(function () {
+            $("#btn_run").attr('disabled', true).css("cursor", "default");
+            lottery();
+        });
+    });
+
+    function rd() {
+        var num = Math.floor(Math.random() * 100);
+        if (num < 5) {
+            return 0;
+        } else if (num >= 5 && num <= 15) {
+            return 1;
+        } else if (num >= 16 && num <= 25) {
+            return 2;
+        } else if (num >= 26 && num <= 35) {
+            return 3;
+        } else if (num >= 36 && num <= 45) {
+            return 5;
+        } else {
+            return 4;
+        }
+    }
+
+    function lottery() {
+        var arr = [{"isHasChance": "true", "rotate": 0, "results": "恭喜您获得Iphone 7!!，请自行前往苹果商店领取"},
+            {"isHasChance": "true", "rotate": 60, "results": "哦哟哟，日本自由行!!走起~~"},
+            {"isHasChance": "true", "rotate": 120, "results": "灵达亲手为您自制牛排!!味道嗲!!"},
+            {"isHasChance": "true", "rotate": 180, "results": "让外星人带你飞!!"},
+            {"isHasChance": "true", "rotate": 240, "results": "木有东西，哭去吧，哈哈哈!!"},
+            {"isHasChance": "true", "rotate": 300, "results": "灵达按摩，天下无双!!赏你了~~"}]
+
+        var cur = arr[rd()];
+        $("#run").rotate({
+            duration: 3000, //转动时间
+            angle: 0, //默认角度
+            animateTo: 360 * 6 + cur.rotate, //转动角度
+            easing: $.easing.easeOutSine,
+            callback: function () {
+                alert(cur.results);
+                $("#btn_run").attr('disabled', false).css("cursor", "pointer");
+            }
+        });
+
+    }
+    ;
+
+</script>
+</body></html>

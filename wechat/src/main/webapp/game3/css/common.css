@@ -1,0 +1,348 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, pre, dl, dt, dd, ul, ol, li, th, td, form, fieldset, legend, button, input, textarea, figure, figcaption, nav, footer, menu {
+    margin: 0;
+    padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+address, em, i, b {
+    font-style: normal
+}
+
+a, a:hover {
+    color: #666;
+    text-decoration: none
+}
+
+ul, ol, li {
+    list-style: none
+}
+
+fieldset, img {
+    border: 0
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: none
+}
+
+button, input, select, textarea {
+    font: 16px/1.5 Helvetica, Arial;
+    outline: none
+}
+
+textarea, input {
+    background: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none
+}
+
+body {
+    word-wrap: break-word;
+    font: 16px/1.5 Helvetica, Arial;
+    color: #666;
+    background: #fff
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "黑体 Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.clear {
+    height: 0px;
+    clear: both;
+}
+
+body {
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
+    min-height: 320px;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.g-download {
+    background-color: #fff;
+    height: 60px;
+    width: 100%;
+}
+
+.g-download.footer {
+    background-color: rgba(0, 0, 0, 0.57);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.g-d-logo {
+    float: left;
+    margin: 8px 0 0px 16px;
+    height: 44px;
+    width: 153px;
+    position: relative;
+}
+
+.g-d-btn {
+    float: right;
+    width: 100px;
+    height: 32px;
+    margin: 14px 16px 0 0;
+    background-color: #f15467;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 13px;
+    color: #fff;
+}
+
+.g-d-btn.footer {
+    margin-right: 36px;
+}
+
+.g-d-close {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.g-d-close img {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 16px;
+    top: 5px;
+}
+
+.mgp-dialog {
+    width: 280px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 101;
+}
+
+.mgp-dialog .mgp-close {
+    position: absolute;
+    right: -14px;
+    top: -14px;
+    width: 28px;
+    height: 28px;
+}
+
+.mgp-dialog .left-cont {
+    margin-left: 18px;
+    margin-top: 32px;
+    width: 103px;
+    height: 158px;
+    float: left;
+}
+
+.mgp-dialog .right-cont {
+    float: left;
+    width: 124px;
+    margin: 34px 19px 0 16px;
+}
+
+.mgp-dialog .logo-cont {
+    width: 100%;
+    height: 37px;
+}
+
+.mgp-dialog .cont-text {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #636363;
+    line-height: 18px;
+}
+
+.mgp-dialog .cont-download-btn {
+    width: 80px;
+    height: 25px;
+    margin-top: 20px;
+}
+
+.img-parent-bg {
+    background-color: #ebebeb;
+}
+
+/*img {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*display: block;*/
+/*}*/
+
+.main {
+    width: 100%;
+}
+
+.nav {
+    width: 100%;
+    height: 39px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    font-family: '黑体';
+    border-bottom: 1px solid #f1f1f1;
+    display: -webkit-box;
+}
+
+.nav-logo {
+    width: 47px;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.nav-logo a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.nav-logo a img {
+    width: 100%;
+    height: 20px;
+    margin-top: 9px;
+}
+
+.nav-cont {
+    margin-right: 8px;
+    -webkit-box-flex: 1;
+    text-align: right;
+    height: 39px;
+    line-height: 39px;
+    color: #000;
+    font-size: 14px;
+}
+
+.nav-cont a {
+    padding: 0 7px;
+    display: inline-block;
+    color: #000;
+}
+
+.nav-cont a.active {
+    border-bottom: 1px solid #f15467;
+}
+
+.click-common-download {
+    width: 240px;
+    height: 185px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.c-c-d-close {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.c-c-d-content {
+    padding-top: 40px;
+    width: 100%;
+}
+
+.c-c-d-img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: 27px;
+}
+
+.c-c-d-text {
+    margin-left: 15px;
+    padding-top: 2px;
+    width: 111px;
+    font-size: 13px;
+    color: #363636;
+    line-height: 19px;
+    float: left;
+}
+
+.c-c-d-btn {
+    margin: 25px auto 0 auto;
+    width: 120px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #f15467;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.mgp-dialog2 {
+    position: relative;
+}
+
+.mgp-dialog-close {
+    position: absolute;
+    right: -14px;
+    top: -14px;
+    width: 28px;
+    height: 28px;
+}
+
+.mgp-dialog-title {
+    padding-top: 25px;
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+    font-size: 16px;
+    color: #363636;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e1e1e1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.mgp-dialog-content {
+    padding: 20px 15px 10px 15px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 13px;
+    color: #363636;
+    background-color: #e1e1e1;
+}
+
+.mgp-dialog-footer {
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.mgp-dialog-submit, .mgp-dialog-cancel {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 16px;
+    color: #7ecefd;
+    font-weight: bold;
+}
+
+.mgp-dialog-btn-part {
+    width: 100%;
+    height: 1px;
+    font-size: 1px;
+    background-color: #fff;
+}

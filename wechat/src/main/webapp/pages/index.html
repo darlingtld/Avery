@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html ng-app="HomeModule">
+
+<head>
+    <meta charset="utf-8">
+    <title>萨萨猪影视下载精灵</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="icon" type="images/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/templatemo-style.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse">
+
+<!-- start navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="navigationController">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+                <a id="logo" href="#" class="navbar-brand">灵猪影视</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" class="smoothScroll">首页</a></li>
+                    <li><a href="#show" class="smoothScroll">电视剧</a></li>
+                    <li><a href="#movie" class="smoothScroll">电影</a></li>
+                    <li><a href="#entertainment" class="smoothScroll">综艺</a></li>
+                    <li><a href="#showshow" class="smoothScroll">待定</a></li>
+                    <li><a href="#more" class="smoothScroll">更多</a></li>
+                    <li><a href="#contact" class="smoothScroll">联系我们</a></li>
+                    <li><a id="login" href="#" class="smoothScroll" ng-click="login()">登录</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="login_form" class="container hide">
+        <section class="loginBox row-fluid">
+            <section class="span7 left">
+                <h2>用户登录</h2>
+
+                <p><input type="text" name="username" placeholder="用户名" ng-model="user.username" required/></p>
+
+                <p><input type="password" name="password" placeholder="密码" ng-model="user.password" required/></p>
+                <section class="row-fluid">
+                    <section class="span8 lh30"><label><input type="checkbox" name="rememberme"/>下次自动登录</label>
+                    </section>
+                    <section class="span1"><p><input type="button" value=" 登录 " class="btn btn-primary"
+                                                     ng-click="authenticate()"></p></section>
+                </section>
+            </section>
+            <section class="span5 right">
+                <h2>没有帐户？</h2>
+                <section>
+                    <p>灵猪影视提供最新的影视剧下载地址，登录后享有更多权限</p>
+
+                    <p><input type="button" value=" 注册 " class="btn"></p>
+                </section>
+            </section>
+        </section>
+    </div>
+
+</nav>
+<!-- end navigation -->
+
+<!-- start home -->
+<section id="home" class="text-center" ng-controller="headerController">
+    <div class="templatemo_headerimage">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="../images/slider/captain_america_1920x800.jpg" alt="Slide 1">
+
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">美国队长</h1>
+
+                            <h2 class="wow fadeInDown" data-wow-delay="2000">
+                                <span class="rotate">很好看，很好看的电影</span>
+                            </h2>
+
+                            <p>灵达制作的美剧，电影，综艺下载的网站，就要与众不同</p>
+                            <a href="#showshow" class="smoothScroll btn btn-default wow fadeInDown"
+                               data-wow-delay="2000">America
+                                captain</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/slider/the_big_bang_theory_1920x800.jpg" alt="Slide 2">
+
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">生活大爆炸</h1>
+
+                            <h2 class="wow fadeInDown" data-wow-delay="2000">
+                                <span class="rotate">很好看，很好看的电影</span>
+                            </h2>
+
+                            <p>灵达制作的美剧，电影，综艺下载的网站，就要与众不同</p>
+                            <a href="#about" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">The
+                                Big Bang Theory</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/slider/transformers_1920x800.jpg" alt="Slide 3">
+
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">变形金刚</h1>
+
+                            <h2 class="wow fadeInDown" data-wow-delay="2000">
+                                <span class="rotate">很好看，很好看的电影</span>
+                            </h2>
+
+                            <p>灵达制作的美剧，电影，综艺下载的网站，就要与众不同</p>
+                            <a href="#entertainment" class="smoothScroll btn btn-default wow fadeInDown"
+                               data-wow-delay="2000">Transfomers</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/slider/vampire_diaries_1920x800.jpg" alt="Slide 4">
+
+                    <div class="slider-caption">
+                        <div class="templatemo_homewrapper">
+                            <h1 class="wow fadeInDown" data-wow-delay="2000">吸血鬼日记</h1>
+
+                            <h2 class="wow fadeInDown" data-wow-delay="2000">
+                                <span class="rotate">很好看，很好看的电影</span>
+                            </h2>
+
+                            <p>灵达制作的美剧，电影，综艺下载的网站，就要与众不同</p>
+                            <a href="#entertainment" class="smoothScroll btn btn-default wow fadeInDown"
+                               data-wow-delay="2000">Vampire Diaries</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end home -->
+<!-- start show -->
+<section id="show">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-7 wow fadeInLeft" data-wow-delay="2000">
+                <h3>《复仇》</h3>
+
+                <h2>第五季Daniel复活，都活了。。。</h2>
+
+                <p>该剧描述一个名叫Emily Thorne（Emily
+                    VanCamp扮演）的神秘女孩儿来到富人云集的汉普顿，租下一栋靠海的房子，对外宣称自己是来度假的。她很快赢得了邻居的信任。但他们都不知道，这个女孩所做的每一件事都有目的－－她要让多年前使其家破人亡的Grayson家族血债血偿。</p>
+            </div>
+            <div class="col-sm-6 col-md-5 wow fadeInRight" data-wow-delay="2000">
+                <h3>最新电视剧</h3>
+
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="../images/revenge_500x250.jpg" class="img-responsive" alt="show 1">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="../images/friends_500x250.jpg" class="img-responsive" alt="show 2">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="../images/grey's_anatomy_500x250.jpg" class="img-responsive" alt="show 3">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="../images/house_of_cards_500x250.jpg" class="img-responsive" alt="show 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end show -->
+<!-- start movie -->
+<section id="movie" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInDown" data-wow-delay="900">
+                <h3>最新电影</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>
+                    小白领金天正在经历人生中最失败的时刻：男友悔婚，深爱的奶奶去世，金天的内心断然崩溃。伤心的她误打误撞来到了布拉格，想用逃避来抚平内心的创痛，男主角彭泽阳在此时出现，一段奶奶尘封的爱情也慢慢在她面前展开。</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-sm-6 col-md-3 wow fadeInLet" data-wow-delay="2000">
+                <div class="movie_thumb">
+                    <img src="../images/teddy_500x500.jpg" class="img-responsive" alt="movie">
+
+                    <div class="movie_overlay">
+                        <ul class="social_icon">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="movie_description">
+                    <h4>泰迪熊</h4>
+                    <h5>电影</h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="2000">
+                <div class="movie_thumb">
+                    <img src="../images/transformers_500x500.jpg" class="img-responsive" alt="movie">
+
+                    <div class="movie_overlay">
+                        <ul class="social_icon">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="movie_description">
+                    <h4>变形金刚</h4>
+                    <h5>电影</h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="2000">
+                <div class="movie_thumb">
+                    <img src="../images/spider_man_500x500.jpg" class="img-responsive" alt="movie">
+
+                    <div class="movie_overlay">
+                        <ul class="social_icon">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="movie_description">
+                    <h4>超凡蜘蛛侠</h4>
+                    <h5>电影</h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInRight" data-wow-delay="2000">
+                <div class="movie_thumb">
+                    <img src="../images/kingkong_500x500.jpg" class="img-responsive" alt="movie">
+
+                    <div class="movie_overlay">
+                        <ul class="social_icon">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="movie_description">
+                    <h4>金刚</h4>
+                    <h5>电影</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end movie -->
+<!-- start entertainment -->
+<section id="entertainment">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <h3>娱乐综艺</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center">
+                <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa fa-cog pull-left media-object"></i>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">内地综艺</h4>
+
+                        <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInDown" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa fa-globe pull-left media-object"></i>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">港台综艺</h4>
+
+                        <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInRight" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa fa-desktop pull-left media-object"></i>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">亚洲综艺</h4>
+
+                        <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa fa-heart pull-left media-object"></i>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">欧美综艺</h4>
+
+                        <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInDown" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa fa-laptop pull-left media-object"></i>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">南美综艺</h4>
+
+                        <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInRight" data-wow-delay="2000">
+                <div class="media">
+                    <i class="fa fa-envelope pull-left media-object"></i>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">非洲综艺</h4>
+
+                        <p>综艺频道提供最新好看的综艺节目排行榜,推荐好看的综艺节目、娱乐节目、日本综艺节目、韩国综艺节目、香港台湾综艺节目，尽在视频综艺频道</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end entertainment -->
+<!-- start subscribe -->
+<section id="subscribe" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <h3>影视信息订阅</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>填写你的邮箱地址，即可发送最新影视信息到你那里</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <form role="form">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                        <input type="email" placeholder="输入你的邮箱地址" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="submit" value="马上订阅" class="form-control">
+                    </div>
+                    <div class="col-md-1"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end subscribe -->
+<!-- start showshow -->
+<section id="showshow" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <h3>放点撒呢。。。</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>让老子再想想，不要急</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                <div class="showshow_thumb">
+                    <img src="../images/showshow-img-1.jpg" class="img-responsive" alt="showshow">
+
+                    <div class="showshow_overlay">
+                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInDown" data-wow-delay="2000">
+                <div class="showshow_thumb">
+                    <img src="../images/showshow-img-2.jpg" class="img-responsive" alt="showshow">
+
+                    <div class="showshow_overlay">
+                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInRight" data-wow-delay="2000">
+                <div class="showshow_thumb">
+                    <img src="../images/showshow-img-3.jpg" class="img-responsive" alt="showshow">
+
+                    <div class="showshow_overlay">
+                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                <div class="showshow_thumb">
+                    <img src="../images/showshow-img-4.jpg" class="img-responsive" alt="showshow">
+
+                    <div class="showshow_overlay">
+                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="2000">
+                <div class="showshow_thumb">
+                    <img src="../images/showshow-img-5.jpg" class="img-responsive" alt="showshow">
+
+                    <div class="showshow_overlay">
+                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 wow fadeInRight" data-wow-delay="2000">
+                <div class="showshow_thumb">
+                    <img src="../images/showshow-img-1.jpg" class="img-responsive" alt="showshow">
+
+                    <div class="showshow_overlay">
+                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end showshow -->
+<!-- start more -->
+<section id="more" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <h3>更多</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>更多美剧，更多影视，尽在这里</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="2000">
+                <div class="plan plan_one">
+                    <h4 class="plan_title">a</h4>
+                    <ul>
+                        <li>a</li>
+                        <li>a</li>
+                        <li>a</li>
+                        <li>a</li>
+                        <li>a</li>
+                    </ul>
+                    <button class="btn btn-warning">aa</button>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInDown" data-wow-delay="2000">
+                <div class="plan plan_two">
+                    <h4 class="plan_title">b</h4>
+                    <ul>
+                        <li>b</li>
+                        <li>b</li>
+                        <li>b</li>
+                        <li>b</li>
+                        <li>b</li>
+                    </ul>
+                    <button class="btn btn-warning">bb</button>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInDown" data-wow-delay="2000">
+                <div class="plan plan_three">
+                    <h4 class="plan_title">c</h4>
+                    <ul>
+                        <li>c</li>
+                        <li>c</li>
+                        <li>c</li>
+                        <li>c</li>
+                        <li>c</li>
+                    </ul>
+                    <button class="btn btn-warning">cc</button>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow fadeInRight" data-wow-delay="2000">
+                <div class="plan plan_four">
+                    <h4 class="plan_title">d</h4>
+                    <ul>
+                        <li>d</li>
+                        <li>d</li>
+                        <li>d</li>
+                        <li>d</li>
+                        <li>d</li>
+                    </ul>
+                    <button class="btn btn-warning">dd</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end more -->
+<!-- start contact -->
+<section id="contact" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                <h3>联系我们</h3>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>把好的，极好的的评价都告诉我们，让我们开心一下</p>
+            </div>
+            <div class="col-md-2"></div>
+            <form action="#" method="post">
+                <div class="col-md-4 wow fadeInLeft" data-wow-delay="2000">
+                    <input type="text" placeholder="名字" class="form-control">
+                </div>
+                <div class="col-md-4 wow fadeInDown" data-wow-delay="2000">
+                    <input type="email" placeholder="邮箱地址" class="form-control" required>
+                </div>
+                <div class="col-md-4 wow fadeInRight" data-wow-delay="2000">
+                    <input type="text" placeholder="主题" class="form-control">
+                </div>
+                <div class="col-md-12 wow fadeInDown" data-wow-delay="2000">
+                    <textarea placeholder="信息" class="form-control"></textarea>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-6 wow fadeInUp" data-wow-delay="2000">
+                    <input type="submit" value="发送" class="form-control">
+                </div>
+                <div class="col-md-3"></div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="container">
+        <div class="col-md-12 wow fadeInUp" data-wow-duration="0.4s" data-wow-delay="0.4s">
+					<span>
+                    	Copyright &copy; 2015 灵猪影视集团
+                    </span>
+            <ul class="social_icon">
+                <li><a href="#" class="fa fa-facebook"></a></li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+                <li><a href="#" class="fa fa-apple"></a></li>
+                <li><a href="#" class="fa fa-pinterest"></a></li>
+                <li><a href="#" class="fa fa-google"></a></li>
+                <li><a href="#" class="fa fa-wordpress"></a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!-- end contact -->
+
+<!-- start javascript -->
+<script src="../javascript/lib/jquery-2.1.3.min.js"></script>
+<script src="../javascript/lib/bootstrap.js"></script>
+<script src="../javascript/lib/jquery.simple-text-rotator.js"></script>
+<script src="../javascript/lib/smoothscroll.js"></script>
+<script src="../javascript/lib/wow.min.js"></script>
+<script src="../javascript/lib/jquery.flexslider.js"></script>
+<script src="../javascript/lib/templatemo-script.js"></script>
+<script src="../javascript/lib/jquery.cookie.js"></script>
+<script src="../javascript/lib/angular.js"></script>
+<script src="../javascript/lib/angular-route.js"></script>
+<script src="../javascript/lib/layer.min.js"></script>
+<script src="../javascript/home.js"></script>
+<!-- end ../javascript -->
+</body>
+</html>

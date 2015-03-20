@@ -1,0 +1,18 @@
+package wechat.message.resp;
+
+/**
+ * ”Ô“Ùœ˚œ¢
+ * 
+ */
+public class VoiceMessage extends BaseMessage {
+	// ”Ô“Ù
+	private wechat.message.resp.Voice Voice;
+
+	public wechat.message.resp.Voice getVoice() {
+		return Voice;
+	}
+
+	public void setVoice(wechat.message.resp.Voice voice) {
+		Voice = voice;
+	}
+}
